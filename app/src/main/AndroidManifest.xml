@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="kr.co.notiplus">
+
+    <!-- 노티플러스 사용을 위해 꼭 추가해주세요 -->
+    <uses-sdk tools:overrideLibrary="kr.co.notiplus.lib" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".SimpleInitActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CustomSwitchActivity">
+        </activity>
+
+        <activity android:name=".CustomIntroPopupActivity">
+        </activity>
+
+        <!-- 노티플러스 사용을 위해 꼭 추가해주세요 -->
+        <activity
+            android:name="kr.co.notiplus.lib.activity.NotiplusWebviewActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:label="@string/lib_name_notiplus"
+            android:launchMode="singleInstance"
+            android:taskAffinity="kr.co.notiplus.lib.activity.NotiplusWebviewActivity"
+            android:theme="@style/NotiplusTheme.Translucent" />
+        <service android:name="kr.co.notiplus.lib.NotiplusService" />
+        <receiver android:name="kr.co.notiplus.lib.NotiplusServiceManager">
+            <intent-filter>
+                <action android:name="kr.co.notiplus.ACTION_NOTIPLUS_ATTACH" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 노티플러스 알림바 id 변경이 필요하다면 추가해주세요 -->
+        <meta-data
+            android:name="kr.co.notiplus.lib.notification.id"
+            android:value="9" />
+
+        <!-- 노티플러스 알림바 누가버전 대응을 위한 extra id 변경이 필요하다면 추가해주세요 -->
+        <meta-data
+            android:name="kr.co.notiplus.lib.notification.id.extra"
+            android:value="10" />
+
+    </application>
+
+</manifest>
