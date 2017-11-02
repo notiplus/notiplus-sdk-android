@@ -1,1 +1,1 @@
-include ':app', ':Notiplus-1.2.1', ':Notiplus-1.2.2', ':Notiplus-1.2.3'
+include ':app', ':Notiplus-1.2.3'
