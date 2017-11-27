@@ -7,8 +7,8 @@ android {
         applicationId "kr.co.notiplus"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 26
-        versionName "1.2.6"
+        versionCode 27
+        versionName "1.2.7"
         multiDexEnabled true
 
         addManifestPlaceholders([APP_NAME: "@string/app_name"])
@@ -34,5 +34,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile project(":Notiplus-1.2.6")
+    compile project(":Notiplus-1.2.7")
 }

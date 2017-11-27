@@ -41,7 +41,6 @@
             android:process=":remote" />
         <receiver android:name="kr.co.notiplus.lib.NotiplusServiceManager">
             <intent-filter>
-                <action android:name="kr.co.notiplus.ACTION_NOTIPLUS_ATTACH" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
