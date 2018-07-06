@@ -5,6 +5,7 @@
 
     <!-- 노티플러스 사용을 위해 꼭 추가해주세요 -->
     <uses-sdk tools:overrideLibrary="kr.co.notiplus.lib" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -36,9 +37,7 @@
             android:launchMode="singleInstance"
             android:taskAffinity="kr.co.notiplus.lib.activity.NotiplusWebviewActivity"
             android:theme="@style/NotiplusTheme.Translucent" />
-        <service
-            android:name="kr.co.notiplus.lib.NotiplusService"
-            android:process=":remote" />
+        <service android:name="kr.co.notiplus.lib.NotiplusService" />
         <receiver android:name="kr.co.notiplus.lib.NotiplusServiceManager">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
